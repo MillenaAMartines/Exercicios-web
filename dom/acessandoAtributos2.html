@@ -1,0 +1,45 @@
+32<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const list = document.querySelector('div ul[destino ="escritório"]') // ou #compras
+        console.log('Elemento "ul".....')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino) // acessando dirertamente nao é possivel
+        console.log('getAttribute', lista.getAtrribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttibute('destino', 'empresa')  // alterar ou add um atributo que nao existe. 
+        lista.setAttibute('status', 'aberto')
+        lista.removeAttibute('destino')
+        console.log(lista.dataSet.urgencia)
+        lista.dataSet.urgencia = 4
+
+        console.log(lista.getAtrribute('data-urgencia')) // so é possivel acessar atravez de uma string 
+        //cuidados: nem sempre o atributo que estará  definido no html esta disponivel para acessar 
+        //com o mesmo nome  
+
+        const label = documento.querySelector('label')
+        console.log(label.for) // nao é possivel acessar por se tratar de uma palavra reservada 
+        console.log(label.htmlFor) // só desta maneira é possivel o acesso  ou da forma aseguir 
+        console.log(label.getAtrribute('for'))
+
+    
+    </script>
+</body>
+
+</html>
